@@ -1,0 +1,22 @@
+{
+    "name" : "Registro de Estudiantes",
+    "short_name" : "Estudiantes", 
+    "description" : "Registro de Estudiantes",
+    "start_url" : "./index.html",
+    "display" : "standalone",
+    "background_color" : "#111715",
+    "theme_color" : "#111715",
+    "lang" : "es",
+    "icons" : [
+        {
+            "src" : "ico1.png",
+            "sizes" : "76x72",
+            "type" : "image/png"
+        },
+        {
+            "src" : "ico4.png",
+            "sizes" : "268x237",
+            "type" : "image/png"
+        }
+    ]
+}
