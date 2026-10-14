@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#111923">
+    <meta name="description" content="Administra el registro de estudiantes de forma sencilla.">
+    <title>Estudiantes | Registro</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="./" aria-label="Inicio, Registro de estudiantes">
+            <span class="brand-mark" aria-hidden="true">E</span>
+            <span class="brand-copy"><strong>Campus</strong><small>REGISTRO ACADÉMICO</small></span>
+        </a>
+        <div class="topbar-actions">
+            <span class="status" id="status"><span class="status-dot"></span><span>En línea</span></span>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar a tema claro" aria-pressed="false" title="Cambiar tema">
+                <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg>
+                <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.4A8.5 8.5 0 0 1 8.6 3.8 8.5 8.5 0 1 0 20.2 15.4Z"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="page-shell">
+        <section class="welcome" aria-labelledby="pageTitle">
+            <div>
+                <p class="eyebrow">PANEL DE CONTROL</p>
+                <h1 id="pageTitle">Estudiantes</h1>
+                <p class="welcome-copy">Administra la información de tu comunidad académica.</p>
+            </div>
+            <div class="summary" aria-label="Resumen de estudiantes">
+                <span class="summary-icon" aria-hidden="true">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="10" cy="7" r="4"></circle><path d="M20 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                </span>
+                <span><strong id="contador">0</strong><small>estudiantes registrados</small></span>
+            </div>
+        </section>
+
+        <div class="workspace">
+            <section class="panel form-panel" aria-labelledby="titleForm">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">DIRECTORIO</p>
+                        <h2 id="titleForm">Nuevo estudiante</h2>
+                    </div>
+                    <span class="heading-mark" aria-hidden="true">+</span>
+                </div>
+                <form id="form" novalidate>
+                    <div class="field">
+                        <label for="matricula">Matrícula</label>
+                        <input type="text" id="matricula" name="matricula" placeholder="Ej. 20241028" inputmode="numeric" maxlength="8" autocomplete="off" aria-describedby="hint-matricula err-matricula" required>
+                        <small class="hint" id="hint-matricula">Usa los 8 dígitos de identificación.</small>
+                        <small class="error" id="err-matricula"></small>
+                    </div>
+                    <div class="field">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellidos" autocomplete="name" aria-describedby="err-nombre" required>
+                        <small class="error" id="err-nombre"></small>
+                    </div>
+                    <div class="field">
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" name="correo" placeholder="nombre@dominio.com" autocomplete="email" aria-describedby="err-correo" required>
+                        <small class="error" id="err-correo"></small>
+                    </div>
+                    <div class="field">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="10 dígitos" inputmode="numeric" maxlength="10" autocomplete="tel" aria-describedby="err-telefono" required>
+                        <small class="error" id="err-telefono"></small>
+                    </div>
+                    <div class="form-actions">
+                        <button class="button button-primary" type="submit" id="save">Guardar estudiante</button>
+                        <button class="button button-secondary" type="button" id="cancel" hidden>Cancelar</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="panel directory-panel" aria-labelledby="directoryTitle">
+                <div class="directory-heading">
+                    <div>
+                        <p class="eyebrow">PERSONAS</p>
+                        <h2 id="directoryTitle">Directorio</h2>
+                    </div>
+                    <label class="search-box" for="search">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+                        <input id="search" type="search" placeholder="Buscar estudiante" autocomplete="off">
+                    </label>
+                </div>
+                <ul id="lista" class="student-list" aria-live="polite"></ul>
+                <div id="vacio" class="empty-state" hidden>
+                    <span class="empty-icon" aria-hidden="true">
+                        <svg class="icon" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"></circle><path d="M3 20v-1a6 6 0 0 1 12 0v1M19 8v6m3-3h-6"></path></svg>
+                    </span>
+                    <strong id="emptyTitle">Aún no hay estudiantes</strong>
+                    <p id="emptyCopy">Agrega el primer registro para verlo aquí.</p>
+                </div>
+            </section>
+        </div>
+        <footer class="page-footer"><span>Campus · Registro académico</span><span>Los cambios se guardan en este dispositivo</span></footer>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="js/app.js" defer></script>
+</body>
+</html>
