@@ -89,7 +89,7 @@ function showToast(message) {
     window.clearTimeout(toastTimer);
     toast.textContent = message;
     toast.classList.add('visible');
-    toastTimer = window.setTimeout(() => toast.classList.remove('visible'), 2800);
+    toastTimer = window.setTimeout(() => toast.classList.remove('visible'), 4800);
 }
 
 function initials(name) {
@@ -163,7 +163,7 @@ form.addEventListener('submit', (event) => {
     if (saveStudents(updated)) {
         resetForm();
         render();
-        showToast(wasEditing ? 'Estudiante actualizado.' : 'Estudiante agregado al directorio.');
+        showToast(wasEditing ? 'Estudiante actualizado.' : 'Estudiante agregado a la lista.');
     }
 });
 
@@ -202,7 +202,7 @@ function applyTheme(theme) {
     document.documentElement.dataset.theme = isLight ? 'light' : 'dark';
     themeToggle.setAttribute('aria-pressed', String(isLight));
     themeToggle.setAttribute('aria-label', isLight ? 'Cambiar a tema oscuro' : 'Cambiar a tema claro');
-    document.querySelector('meta[name="theme-color"]').content = isLight ? '#f2f5f0' : '#111715';
+    document.querySelector('meta[name="theme-color"]').content = isLight ? '#f1f4f7' : '#111923';
 }
 
 applyTheme(localStorage.getItem(THEME_KEY) || 'dark');

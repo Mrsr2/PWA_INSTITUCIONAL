@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#111715">
+    <meta name="theme-color" content="#111923">
     <meta name="description" content="Administra el registro de estudiantes de forma sencilla.">
-    <title>Estudiantes | Registro</title>
+    <title>Registro de Estudiantes</title>
     <link rel="stylesheet" href="style/style.css">
     <link rel="manifest" href="manifest.json">
 </head>
@@ -13,7 +13,7 @@
     <header class="topbar">
         <a class="brand" href="./" aria-label="Inicio, Registro de estudiantes">
             <span class="brand-mark" aria-hidden="true">E</span>
-            <span class="brand-copy"><strong>Campus</strong><small>REGISTRO ACADÉMICO</small></span>
+            <span class="brand-copy"><strong>ESTUDIANTE</strong><small>© 2026 Cris.deev Todos los derechos reservados</small></span>
         </a>
         <div class="topbar-actions">
             <span class="status" id="status"><span class="status-dot"></span><span>En línea</span></span>
@@ -29,13 +29,13 @@
             <div>
                 <p class="eyebrow">PANEL DE CONTROL</p>
                 <h1 id="pageTitle">Estudiantes</h1>
-                <p class="welcome-copy">Administra la información de tu comunidad académica.</p>
+                <p class="welcome-copy">Administra la información de la comunidad académica.</p>
             </div>
             <div class="summary" aria-label="Resumen de estudiantes">
                 <span class="summary-icon" aria-hidden="true">
                     <svg class="icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="10" cy="7" r="4"></circle><path d="M20 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                 </span>
-                <span><strong id="contador">0</strong><small>estudiantes registrados</small></span>
+                <span><strong id="contador">0</strong><small>Estudiantes Registrados</small></span>
             </div>
         </section>
 
@@ -71,7 +71,7 @@
                         <small class="error" id="err-telefono"></small>
                     </div>
                     <div class="form-actions">
-                        <button class="button button-primary" type="submit" id="save">Guardar estudiante</button>
+                        <button class="button button-primary" type="submit" id="save">Guardar informacion</button>
                         <button class="button button-secondary" type="button" id="cancel" hidden>Cancelar</button>
                     </div>
                 </form>
@@ -80,8 +80,8 @@
             <section class="panel directory-panel" aria-labelledby="directoryTitle">
                 <div class="directory-heading">
                     <div>
-                        <p class="eyebrow">PERSONAS</p>
-                        <h2 id="directoryTitle">Directorio</h2>
+                        <p class="eyebrow">Estudiantes</p>
+                        <h2 id="directoryTitle">Base de datos</h2>
                     </div>
                     <label class="search-box" for="search">
                         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
@@ -93,12 +93,12 @@
                     <span class="empty-icon" aria-hidden="true">
                         <svg class="icon" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"></circle><path d="M3 20v-1a6 6 0 0 1 12 0v1M19 8v6m3-3h-6"></path></svg>
                     </span>
-                    <strong id="emptyTitle">Aún no hay estudiantes</strong>
-                    <p id="emptyCopy">Agrega el primer registro para verlo aquí.</p>
+                    <strong id="emptyTitle">sin registros de estudiantes</strong>
+                    <p id="emptyCopy">En cuanto agreges el primer registro  podras verlo aquí.</p>
                 </div>
             </section>
         </div>
-        <footer class="page-footer"><span>Campus · Registro académico</span><span>Los cambios se guardan en este dispositivo</span></footer>
+        <footer class="page-footer"><span>Student Registration Form</span><span>Enginer Ti</span></footer>
     </main>
 
     <div id="toast" class="toast" role="status" aria-live="polite"></div>

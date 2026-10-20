@@ -4,8 +4,8 @@
     "description" : "Registro de Estudiantes",
     "start_url" : "./index.html",
     "display" : "standalone",
-    "background_color" : "#111715",
-    "theme_color" : "#111715",
+    "background_color" : "#111923",
+    "theme_color" : "#111923",
     "lang" : "es",
     "icons" : [
         {
